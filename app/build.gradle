@@ -6,6 +6,7 @@
 
 plugins {
     id 'hexlet.code.java-application-conventions'
+    id 'application'
 }
 
 dependencies {
@@ -15,5 +16,9 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'hexlet.code.app.App'
+    mainClass = 'hexlet.code.App'
+}
+
+compileJava {
+    options.release = 17
 }
