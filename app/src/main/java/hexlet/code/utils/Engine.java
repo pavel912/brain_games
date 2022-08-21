@@ -37,7 +37,7 @@ public final class Engine {
             if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct answer!");
             } else {
-                System.out.println("Incorrect answer! Correct answer was "
+                System.out.println(userAnswer + " is incorrect. Correct answer was "
                         + "\"" + correctAnswer + "\"");
                 System.out.println("Let's try again, " + userName + "!");
                 System.exit(0);
