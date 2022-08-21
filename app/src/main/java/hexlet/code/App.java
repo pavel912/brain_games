@@ -1,13 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.EvenCheckGame;
-import hexlet.code.games.CalculatorGame;
-import hexlet.code.games.GCDGame;
-import hexlet.code.games.ProgressionGame;
-import hexlet.code.games.PrimeGame;
-import hexlet.code.utils.Cli;
-import hexlet.code.utils.Engine;
-import hexlet.code.utils.StartMenu;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 public class App {
     public static void main(String[] args) {
@@ -20,33 +17,33 @@ public class App {
         switch (command) {
             case "1" -> Cli.greetUser();
             case "2" -> {
-                questions = EvenCheckGame.getQuestions();
-                correctAnswers = EvenCheckGame.getAnswers();
-                rules = EvenCheckGame.getRules();
+                questions = Even.getQuestions();
+                correctAnswers = Even.getAnswers();
+                rules = Even.getRules();
                 Engine.runGame(questions, correctAnswers, rules);
             }
             case "3" -> {
-                questions = CalculatorGame.getQuestions();
-                correctAnswers = CalculatorGame.getAnswers();
-                rules = CalculatorGame.getRules();
+                questions = Calc.getQuestions();
+                correctAnswers = Calc.getAnswers();
+                rules = Calc.getRules();
                 Engine.runGame(questions, correctAnswers, rules);
             }
             case "4" -> {
-                questions = GCDGame.getQuestions();
-                correctAnswers = GCDGame.getAnswers();
-                rules = GCDGame.getRules();
+                questions = GCD.getQuestions();
+                correctAnswers = GCD.getAnswers();
+                rules = GCD.getRules();
                 Engine.runGame(questions, correctAnswers, rules);
             }
             case "5" -> {
-                questions = ProgressionGame.getQuestions();
-                correctAnswers = ProgressionGame.getAnswers();
-                rules = ProgressionGame.getRules();
+                questions = Progression.getQuestions();
+                correctAnswers = Progression.getAnswers();
+                rules = Progression.getRules();
                 Engine.runGame(questions, correctAnswers, rules);
             }
             case "6" -> {
-                questions = PrimeGame.getQuestions();
-                correctAnswers = PrimeGame.getAnswers();
-                rules = PrimeGame.getRules();
+                questions = Prime.getQuestions();
+                correctAnswers = Prime.getAnswers();
+                rules = Prime.getRules();
                 Engine.runGame(questions, correctAnswers, rules);
             }
             case "0" -> System.exit(0);

@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import java.util.Random;
-public class GCDGame {
+public class GCD {
     private static String[] answers;
     public static String[] getQuestions() {
         Random random = new Random();

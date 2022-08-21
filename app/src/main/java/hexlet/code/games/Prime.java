@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import java.util.Random;
-public class PrimeGame {
+public class Prime {
     private static String[] answers;
 
     public static String[] getQuestions() {
