@@ -1,9 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.CalculatorGame;
 import hexlet.code.games.EvenCheckGame;
+import hexlet.code.games.CalculatorGame;
 import hexlet.code.games.GCDGame;
 import hexlet.code.games.ProgressionGame;
+import hexlet.code.games.PrimeGame;
 import hexlet.code.utils.Cli;
 import hexlet.code.utils.Engine;
 import hexlet.code.utils.StartMenu;
@@ -32,8 +33,13 @@ public class App {
                 gameFlow.runGame();
             }
             case "5" -> {
-                ProgressionGame pGame = new ProgressionGame();
-                gameFlow.setGame(pGame);
+                ProgressionGame progressionGame = new ProgressionGame();
+                gameFlow.setGame(progressionGame);
+                gameFlow.runGame();
+            }
+            case "6" -> {
+                PrimeGame primeGame = new PrimeGame();
+                gameFlow.setGame(primeGame);
                 gameFlow.runGame();
             }
             case "0" -> System.exit(0);
