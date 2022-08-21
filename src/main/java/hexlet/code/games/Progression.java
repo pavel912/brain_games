@@ -25,21 +25,25 @@ public class Progression {
 
             answers[i] = Integer.toString(numberStart + numberDiff * skipIndex);
 
-            StringBuilder builder = new StringBuilder();
-
-            for (int j = 0; j < seriesLength; j++) {
-                if (j == skipIndex) {
-                    builder.append(".. ");
-                } else {
-                    builder.append(numberStart + numberDiff * j);
-                    builder.append(" ");
-                }
-            }
-
-            questions[i] = builder.toString();
+            questions[i] = buildSeries(numberStart, numberDiff, skipIndex, seriesLength);
         }
 
         return questions;
+    }
+
+    public static String buildSeries(int numberStart, int numberDiff, int skipIndex, int seriesLength) {
+        StringBuilder builder = new StringBuilder();
+
+        for (int j = 0; j < seriesLength; j++) {
+            if (j == skipIndex) {
+                builder.append(".. ");
+            } else {
+                builder.append(numberStart + numberDiff * j);
+                builder.append(" ");
+            }
+        }
+
+        return builder.toString();
     }
 
     public static String[] getAnswers() {
