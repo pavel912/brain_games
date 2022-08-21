@@ -1,11 +1,9 @@
 package hexlet.code.games;
 
 import java.util.Random;
-public final class ProgressionGame implements Game {
-    private int answer;
-
-    @Override
-    public String getQuestion() {
+public class ProgressionGame {
+    private static String[] answers;
+    public static String[] getQuestions() {
         Random random = new Random();
 
         final int seriesLength = 10;
@@ -13,33 +11,42 @@ public final class ProgressionGame implements Game {
         final int upperBoundStart = 100;
         final int upperBoundDiff = 19;
 
-        int numberStart = random.nextInt(upperBoundStart);
-        int numberDiff = 1 + random.nextInt(upperBoundDiff);
-        int skipIndex = random.nextInt(seriesLength);
+        final int numberOfQuestions = 3;
 
-        answer = numberStart + numberDiff * skipIndex;
+        String[] questions = new String[numberOfQuestions];
 
-        StringBuilder builder = new StringBuilder();
+        answers = new String[numberOfQuestions];
 
-        for (int i = 0; i < seriesLength; i++) {
-            if (i == skipIndex) {
-                builder.append(".. ");
-            } else {
-                builder.append(numberStart + numberDiff * i);
-                builder.append(" ");
+        for (int i = 0; i < numberOfQuestions; i++) {
+
+            int numberStart = random.nextInt(upperBoundStart);
+            int numberDiff = 1 + random.nextInt(upperBoundDiff);
+            int skipIndex = random.nextInt(seriesLength);
+
+            answers[i] = Integer.toString(numberStart + numberDiff * skipIndex);
+
+            StringBuilder builder = new StringBuilder();
+
+            for (int j = 0; j < seriesLength; j++) {
+                if (j == skipIndex) {
+                    builder.append(".. ");
+                } else {
+                    builder.append(numberStart + numberDiff * j);
+                    builder.append(" ");
+                }
             }
+
+            questions[i] = builder.toString();
         }
 
-        return builder.toString();
+        return questions;
     }
 
-    @Override
-    public String getAnswer() {
-        return Integer.toString(answer);
+    public static String[] getAnswers() {
+        return answers;
     }
 
-    @Override
-    public String getRules() {
+    public static String getRules() {
         return "What number is missing in the progression?";
     }
 }

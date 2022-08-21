@@ -1,50 +1,54 @@
 package hexlet.code.games;
 
 import java.util.Random;
-public final class CalculatorGame implements Game {
-    private int answer;
-
-    @Override
-    public String getQuestion() {
+public class CalculatorGame {
+    private static String[] answers;
+    public static String[] getQuestions() {
         Random random = new Random();
-
-        String question = null;
 
         final int upperNumberBound = 20;
 
         final int upperOperatorBound = 3;
 
-        int numberLeft = random.nextInt(upperNumberBound);
-        int numberRight = random.nextInt(upperNumberBound);
+        final int numberOfQuestions = 3;
 
-        int operatorIndex = random.nextInt(upperOperatorBound);
+        String[] questions = new String[numberOfQuestions];
 
-        switch (operatorIndex) {
-            case 0 -> {
-                answer = numberLeft + numberRight;
-                question =  Integer.toString(numberLeft) + " + " + Integer.toString(numberRight);
+        answers = new String[numberOfQuestions];
+
+        for (int i = 0; i < numberOfQuestions; i++) {
+
+            int numberLeft = random.nextInt(upperNumberBound);
+            int numberRight = random.nextInt(upperNumberBound);
+
+            int operatorIndex = random.nextInt(upperOperatorBound);
+
+            switch (operatorIndex) {
+                case 0 -> {
+                    answers[i] = Integer.toString(numberLeft + numberRight);
+                    questions[i] = Integer.toString(numberLeft) + " + " + Integer.toString(numberRight);
+                }
+                case 1 -> {
+                    answers[i] = Integer.toString(numberLeft - numberRight);
+                    questions[i] = Integer.toString(numberLeft) + " - " + Integer.toString(numberRight);
+                }
+                case 2 -> {
+                    answers[i] = Integer.toString(numberLeft * numberRight);
+                    questions[i] = Integer.toString(numberLeft) + " * " + Integer.toString(numberRight);
+                }
+                default -> {
+                }
             }
-            case 1 -> {
-                answer = numberLeft - numberRight;
-                question = Integer.toString(numberLeft) + " - " + Integer.toString(numberRight);
-            }
-            case 2 -> {
-                answer = numberLeft * numberRight;
-                question =  Integer.toString(numberLeft) + " * " + Integer.toString(numberRight);
-            }
-            default -> { }
         }
 
-        return question;
+        return questions;
     }
 
-    @Override
-    public String getAnswer() {
-        return Integer.toString(answer);
+    public static String[] getAnswers() {
+        return answers;
     }
 
-    @Override
-    public String getRules() {
+    public static String getRules() {
         return "What is the result of the expression?";
     }
 }

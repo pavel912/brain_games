@@ -1,29 +1,37 @@
 package hexlet.code.games;
 
 import java.util.Random;
-public final class GCDGame implements Game {
-    private int numberLeft;
-    private int numberRight;
-
-    @Override
-    public String getQuestion() {
+public class GCDGame {
+    private static String[] answers;
+    public static String[] getQuestions() {
         Random random = new Random();
 
         final int upperNumberBound = 99;
 
-        numberLeft = 1 + random.nextInt(upperNumberBound);
-        numberRight = 1 + random.nextInt(upperNumberBound);
+        int numberLeft;
+        int numberRight;
 
-        return Integer.toString(numberLeft) + " " + Integer.toString(numberRight);
+        final int numberOfQuestions = 3;
+
+        String[] questions = new String[numberOfQuestions];
+
+        answers = new String[numberOfQuestions];
+
+        for (int i = 0; i < numberOfQuestions; i++) {
+
+            numberLeft = 1 + random.nextInt(upperNumberBound);
+            numberRight = 1 + random.nextInt(upperNumberBound);
+
+            questions[i] = Integer.toString(numberLeft) + " " + Integer.toString(numberRight);
+            answers[i] = getGCD(Math.max(numberLeft, numberRight), Math.min(numberLeft, numberRight));
+        }
+
+        return questions;
     }
-
-    @Override
-    public String getAnswer() {
+    public static String getGCD(int a, int b) {
         //Euclidean algorithm
         int remainder = 1;
         // "a" is always greater then "b"
-        int a = Math.max(numberLeft, numberRight);
-        int b = Math.min(numberLeft, numberRight);
 
         while (remainder > 0) {
             remainder = a % b;
@@ -34,8 +42,10 @@ public final class GCDGame implements Game {
         return Integer.toString(a);
     }
 
-    @Override
-    public String getRules() {
+    public static String[] getAnswers() {
+        return answers;
+    }
+    public static String getRules() {
         return "Find the greatest common divisor of given numbers.";
     }
 }

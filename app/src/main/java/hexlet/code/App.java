@@ -13,34 +13,41 @@ public class App {
     public static void main(String[] args) {
         String command = StartMenu.getCommand();
 
-        Engine gameFlow = new Engine();
+        String[] questions;
+        String[] correctAnswers;
+        String rules;
 
         switch (command) {
             case "1" -> Cli.greetUser();
             case "2" -> {
-                EvenCheckGame evenGame = new EvenCheckGame();
-                gameFlow.setGame(evenGame);
-                gameFlow.runGame();
+                questions = EvenCheckGame.getQuestions();
+                correctAnswers = EvenCheckGame.getAnswers();
+                rules = EvenCheckGame.getRules();
+                Engine.runGame(questions, correctAnswers, rules);
             }
             case "3" -> {
-                CalculatorGame calcGame = new CalculatorGame();
-                gameFlow.setGame(calcGame);
-                gameFlow.runGame();
+                questions = CalculatorGame.getQuestions();
+                correctAnswers = CalculatorGame.getAnswers();
+                rules = CalculatorGame.getRules();
+                Engine.runGame(questions, correctAnswers, rules);
             }
             case "4" -> {
-                GCDGame gcdGame = new GCDGame();
-                gameFlow.setGame(gcdGame);
-                gameFlow.runGame();
+                questions = GCDGame.getQuestions();
+                correctAnswers = GCDGame.getAnswers();
+                rules = GCDGame.getRules();
+                Engine.runGame(questions, correctAnswers, rules);
             }
             case "5" -> {
-                ProgressionGame progressionGame = new ProgressionGame();
-                gameFlow.setGame(progressionGame);
-                gameFlow.runGame();
+                questions = ProgressionGame.getQuestions();
+                correctAnswers = ProgressionGame.getAnswers();
+                rules = ProgressionGame.getRules();
+                Engine.runGame(questions, correctAnswers, rules);
             }
             case "6" -> {
-                PrimeGame primeGame = new PrimeGame();
-                gameFlow.setGame(primeGame);
-                gameFlow.runGame();
+                questions = PrimeGame.getQuestions();
+                correctAnswers = PrimeGame.getAnswers();
+                rules = PrimeGame.getRules();
+                Engine.runGame(questions, correctAnswers, rules);
             }
             case "0" -> System.exit(0);
             default -> System.out.println("Command was not understood");

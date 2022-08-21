@@ -1,22 +1,33 @@
 package hexlet.code.games;
 
 import java.util.Random;
-public final class PrimeGame implements Game {
-    private int number;
+public class PrimeGame {
+    private static String[] answers;
 
-    @Override
-    public String getQuestion() {
+    public static String[] getQuestions() {
         Random random = new Random();
 
         final int upperNumberBound = 100;
 
-        number = 1 + random.nextInt(upperNumberBound);
+        int number;
 
-        return Integer.toString(number);
+        final int numberOfQuestions = 3;
+
+        String[] questions = new String[numberOfQuestions];
+
+        answers = new String[numberOfQuestions];
+
+        for (int i = 0; i < numberOfQuestions; i++) {
+
+            number = 1 + random.nextInt(upperNumberBound);
+            questions[i] = Integer.toString(number);
+            answers[i] = isPrime(number);
+        }
+
+        return questions;
     }
 
-    @Override
-    public String getAnswer() {
+    public static String isPrime(int number) {
         // not an optimal but quick solution
         final int three = 3; // checkstyle doesn't like magic numbers
         if (number == 1 || number == 2 || number == three) {
@@ -31,8 +42,10 @@ public final class PrimeGame implements Game {
         return "yes";
     }
 
-    @Override
-    public String getRules() {
+    public static String[] getAnswers() {
+        return answers;
+    }
+    public static String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 }
