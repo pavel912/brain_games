@@ -2,8 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 public class Progression {
-    private static String[] answers;
-    public static String[] getQuestions() {
+    public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
         final int seriesLength = 10;
@@ -13,9 +12,7 @@ public class Progression {
 
         final int numberOfQuestions = 3;
 
-        String[] questions = new String[numberOfQuestions];
-
-        answers = new String[numberOfQuestions];
+        String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 
         for (int i = 0; i < numberOfQuestions; i++) {
 
@@ -23,12 +20,12 @@ public class Progression {
             int numberDiff = 1 + random.nextInt(upperBoundDiff);
             int skipIndex = random.nextInt(seriesLength);
 
-            answers[i] = Integer.toString(numberStart + numberDiff * skipIndex);
+            questionsAndAnswers[i][0] = buildSeries(numberStart, numberDiff, skipIndex, seriesLength);
 
-            questions[i] = buildSeries(numberStart, numberDiff, skipIndex, seriesLength);
+            questionsAndAnswers[i][1] = Integer.toString(numberStart + numberDiff * skipIndex);
         }
 
-        return questions;
+        return questionsAndAnswers;
     }
 
     public static String buildSeries(int numberStart, int numberDiff, int skipIndex, int seriesLength) {
@@ -45,11 +42,6 @@ public class Progression {
 
         return builder.toString();
     }
-
-    public static String[] getAnswers() {
-        return answers;
-    }
-
     public static String getRules() {
         return "What number is missing in the progression?";
     }

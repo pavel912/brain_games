@@ -2,29 +2,23 @@ package hexlet.code.games;
 
 import java.util.Random;
 public class Even {
-    private static String[] answers;
-    public static String[] getQuestions() {
+    public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
         final int upperRandomBound = 100;
 
         final int numberOfQuestions = 3;
 
-        String[] questions = new String[numberOfQuestions];
-        answers = new String[numberOfQuestions];
+        String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 
         for (int i = 0; i < numberOfQuestions; i++) {
             int number = random.nextInt(upperRandomBound);
 
-            questions[i] = Integer.toString(number);
-            answers[i] = number % 2 == 0 ? "yes" : "no";
+            questionsAndAnswers[i][0] = Integer.toString(number);
+            questionsAndAnswers[i][1] = number % 2 == 0 ? "yes" : "no";
         }
 
-        return questions;
-    }
-
-    public static String[] getAnswers() {
-        return answers;
+        return questionsAndAnswers;
     }
 
     public static String getRules() {

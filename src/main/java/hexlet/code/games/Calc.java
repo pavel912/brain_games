@@ -2,8 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 public class Calc {
-    private static String[] answers;
-    public static String[] getQuestions() {
+    public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
         final int upperNumberBound = 20;
@@ -12,9 +11,7 @@ public class Calc {
 
         final int numberOfQuestions = 3;
 
-        String[] questions = new String[numberOfQuestions];
-
-        answers = new String[numberOfQuestions];
+        String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 
         for (int i = 0; i < numberOfQuestions; i++) {
 
@@ -25,27 +22,23 @@ public class Calc {
 
             switch (operatorIndex) {
                 case 0 -> {
-                    answers[i] = Integer.toString(numberLeft + numberRight);
-                    questions[i] = Integer.toString(numberLeft) + " + " + Integer.toString(numberRight);
+                    questionsAndAnswers[i][0] = Integer.toString(numberLeft) + " + " + Integer.toString(numberRight);
+                    questionsAndAnswers[i][1] = Integer.toString(numberLeft + numberRight);
                 }
                 case 1 -> {
-                    answers[i] = Integer.toString(numberLeft - numberRight);
-                    questions[i] = Integer.toString(numberLeft) + " - " + Integer.toString(numberRight);
+                    questionsAndAnswers[i][0] = Integer.toString(numberLeft) + " - " + Integer.toString(numberRight);
+                    questionsAndAnswers[i][1] = Integer.toString(numberLeft - numberRight);
                 }
                 case 2 -> {
-                    answers[i] = Integer.toString(numberLeft * numberRight);
-                    questions[i] = Integer.toString(numberLeft) + " * " + Integer.toString(numberRight);
+                    questionsAndAnswers[i][0] = Integer.toString(numberLeft) + " * " + Integer.toString(numberRight);
+                    questionsAndAnswers[i][1] = Integer.toString(numberLeft * numberRight);
                 }
                 default -> {
                 }
             }
         }
 
-        return questions;
-    }
-
-    public static String[] getAnswers() {
-        return answers;
+        return questionsAndAnswers;
     }
 
     public static String getRules() {

@@ -2,9 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 public class Prime {
-    private static String[] answers;
-
-    public static String[] getQuestions() {
+    public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
         final int upperNumberBound = 100;
@@ -13,21 +11,19 @@ public class Prime {
 
         final int numberOfQuestions = 3;
 
-        String[] questions = new String[numberOfQuestions];
-
-        answers = new String[numberOfQuestions];
+        String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 
         for (int i = 0; i < numberOfQuestions; i++) {
 
             number = 1 + random.nextInt(upperNumberBound);
-            questions[i] = Integer.toString(number);
-            answers[i] = isPrime(number);
+            questionsAndAnswers[i][0] = Integer.toString(number);
+            questionsAndAnswers[i][1] = isPrime(number);
         }
 
-        return questions;
+        return questionsAndAnswers;
     }
 
-    public static String isPrime(int number) {
+    private static String isPrime(int number) {
         // not an optimal but quick solution
         final int three = 3; // checkstyle doesn't like magic numbers
         if (number == 1 || number == 2 || number == three) {
@@ -40,10 +36,6 @@ public class Prime {
         }
 
         return "yes";
-    }
-
-    public static String[] getAnswers() {
-        return answers;
     }
     public static String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";

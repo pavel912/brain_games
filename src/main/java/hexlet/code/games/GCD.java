@@ -2,8 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 public class GCD {
-    private static String[] answers;
-    public static String[] getQuestions() {
+    public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
         final int upperNumberBound = 99;
@@ -13,20 +12,18 @@ public class GCD {
 
         final int numberOfQuestions = 3;
 
-        String[] questions = new String[numberOfQuestions];
-
-        answers = new String[numberOfQuestions];
+        String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 
         for (int i = 0; i < numberOfQuestions; i++) {
 
             numberLeft = 1 + random.nextInt(upperNumberBound);
             numberRight = 1 + random.nextInt(upperNumberBound);
 
-            questions[i] = Integer.toString(numberLeft) + " " + Integer.toString(numberRight);
-            answers[i] = getGCD(Math.max(numberLeft, numberRight), Math.min(numberLeft, numberRight));
+            questionsAndAnswers[i][0] = Integer.toString(numberLeft) + " " + Integer.toString(numberRight);
+            questionsAndAnswers[i][1] = getGCD(Math.max(numberLeft, numberRight), Math.min(numberLeft, numberRight));
         }
 
-        return questions;
+        return questionsAndAnswers;
     }
     public static String getGCD(int a, int b) {
         //Euclidean algorithm
@@ -40,10 +37,6 @@ public class GCD {
         }
         // remainder is 0 when a % b == 0 and since "a" was rewritten as "b", the gcd is "a"
         return Integer.toString(a);
-    }
-
-    public static String[] getAnswers() {
-        return answers;
     }
     public static String getRules() {
         return "Find the greatest common divisor of given numbers.";
