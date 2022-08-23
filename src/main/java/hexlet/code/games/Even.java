@@ -2,12 +2,10 @@ package hexlet.code.games;
 
 import java.util.Random;
 public class Even {
-    public static String[][] getQuestionsAndAnswers() {
+    public static String[][] getQuestionsAndAnswers(int numberOfQuestions) {
         Random random = new Random();
 
         final int upperRandomBound = 100;
-
-        final int numberOfQuestions = 3;
 
         String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 

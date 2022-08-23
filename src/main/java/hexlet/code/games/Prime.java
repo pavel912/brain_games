@@ -2,14 +2,12 @@ package hexlet.code.games;
 
 import java.util.Random;
 public class Prime {
-    public static String[][] getQuestionsAndAnswers() {
+    public static String[][] getQuestionsAndAnswers(int numberOfQuestions) {
         Random random = new Random();
 
         final int upperNumberBound = 100;
 
         int number;
-
-        final int numberOfQuestions = 3;
 
         String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 

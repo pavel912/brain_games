@@ -2,14 +2,12 @@ package hexlet.code.games;
 
 import java.util.Random;
 public class Calc {
-    public static String[][] getQuestionsAndAnswers() {
+    public static String[][] getQuestionsAndAnswers(int numberOfQuestions) {
         Random random = new Random();
 
         final int upperNumberBound = 20;
 
         final int upperOperatorBound = 3;
-
-        final int numberOfQuestions = 3;
 
         String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 
