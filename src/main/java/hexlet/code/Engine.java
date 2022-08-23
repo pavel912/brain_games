@@ -3,11 +3,15 @@ package hexlet.code;
 import java.util.Scanner;
 public class Engine {
     public static void runGame(String[] questions, String[] correctAnswers, String rules) {
-        Cli.greetUser();
+        System.out.println("Welcome to the Brain Games!");
 
-        String userName = Cli.getUserName();
+        System.out.print("May I have your name? ");
 
         Scanner scan = new Scanner(System.in);
+
+        String userName = scan.nextLine();
+
+        System.out.println("Hello, " + userName + "!");
 
         final int numberOfQuestions = 3;
 
