@@ -1,11 +1,14 @@
 package hexlet.code.games;
 
 import java.util.Random;
+import hexlet.code.Engine;
 public class Even {
-    public static String[][] getQuestionsAndAnswers(int numberOfQuestions) {
+    public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
         final int upperRandomBound = 100;
+
+        final int numberOfQuestions = Engine.getNumberOfQuestions();
 
         String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 

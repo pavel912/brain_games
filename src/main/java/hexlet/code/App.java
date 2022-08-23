@@ -21,33 +21,23 @@ public class App {
         switch (command) {
             case "1" -> Cli.greetUser();
             case "2" -> Engine.runGame(
-                    Even.getQuestionsAndAnswers(
-                            Engine.getNumberOfQuestions()
-                    ),
+                    Even.getQuestionsAndAnswers(),
                     Even.getRules()
             );
             case "3" -> Engine.runGame(
-                    Calc.getQuestionsAndAnswers(
-                            Engine.getNumberOfQuestions()
-                    ),
+                    Calc.getQuestionsAndAnswers(),
                     Calc.getRules()
             );
             case "4" -> Engine.runGame(
-                    GCD.getQuestionsAndAnswers(
-                            Engine.getNumberOfQuestions()
-                    ),
+                    GCD.getQuestionsAndAnswers(),
                     GCD.getRules()
             );
             case "5" -> Engine.runGame(
-                    Progression.getQuestionsAndAnswers(
-                            Engine.getNumberOfQuestions()
-                    ),
+                    Progression.getQuestionsAndAnswers(),
                     Progression.getRules()
             );
             case "6" -> Engine.runGame(
-                    Prime.getQuestionsAndAnswers(
-                            Engine.getNumberOfQuestions()
-                    ),
+                    Prime.getQuestionsAndAnswers(),
                     Prime.getRules()
             );
             case "0" -> System.exit(0);

@@ -1,14 +1,17 @@
 package hexlet.code.games;
 
 import java.util.Random;
+import hexlet.code.Engine;
 public class GCD {
-    public static String[][] getQuestionsAndAnswers(int numberOfQuestions) {
+    public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
         final int upperNumberBound = 99;
 
         int numberLeft;
         int numberRight;
+
+        final int numberOfQuestions = Engine.getNumberOfQuestions();
 
         String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 

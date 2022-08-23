@@ -1,14 +1,17 @@
 package hexlet.code.games;
 
 import java.util.Random;
+import hexlet.code.Engine;
 public class Progression {
-    public static String[][] getQuestionsAndAnswers(int numberOfQuestions) {
+    public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
         final int seriesLength = 10;
 
         final int upperBoundStart = 100;
         final int upperBoundDiff = 19;
+
+        final int numberOfQuestions = Engine.getNumberOfQuestions();
 
         String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 

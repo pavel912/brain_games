@@ -1,13 +1,16 @@
 package hexlet.code.games;
 
 import java.util.Random;
+import hexlet.code.Engine;
 public class Prime {
-    public static String[][] getQuestionsAndAnswers(int numberOfQuestions) {
+    public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
         final int upperNumberBound = 100;
 
         int number;
+
+        final int numberOfQuestions = Engine.getNumberOfQuestions();
 
         String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 
@@ -24,7 +27,9 @@ public class Prime {
     private static String isPrime(int number) {
         // not an optimal but quick solution
         final int three = 3; // checkstyle doesn't like magic numbers
-        if (number == 1 || number == 2 || number == three) {
+        if (number == 1) {
+            return "no";
+        } else if (number == 2 || number == three) {
             return "yes";
         }
         for (int divisor = 2; divisor <= Math.ceil(Math.sqrt(number)); divisor++) {
