@@ -10,7 +10,7 @@ public class Prime {
 
         int number;
 
-        final int numberOfQuestions = Engine.getNumberOfQuestions();
+        final int numberOfQuestions = Engine.COUNT_ROUNDS;
 
         String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 

@@ -2,11 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 public class Engine {
-    private static final int NUMBEROFQUESTIONS = 3;
-
-    public static int getNumberOfQuestions() {
-        return NUMBEROFQUESTIONS;
-    }
+    public static final int COUNT_ROUNDS = 3;
 
     public static void runGame(String[][] questionsAndAnswers, String rules) {
         System.out.println("Welcome to the Brain Games!");
@@ -21,7 +17,7 @@ public class Engine {
 
         System.out.println(rules);
 
-        for (int i = 0; i < NUMBEROFQUESTIONS; i++) {
+        for (int i = 0; i < COUNT_ROUNDS; i++) {
 
             System.out.println("Question: " + questionsAndAnswers[i][0]);
 

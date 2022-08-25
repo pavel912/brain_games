@@ -8,7 +8,7 @@ public class Even {
 
         final int upperRandomBound = 100;
 
-        final int numberOfQuestions = Engine.getNumberOfQuestions();
+        final int numberOfQuestions = Engine.COUNT_ROUNDS;
 
         String[][] questionsAndAnswers = new String[numberOfQuestions][2];
 
