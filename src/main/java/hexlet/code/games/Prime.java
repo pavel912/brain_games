@@ -19,28 +19,26 @@ public class Prime {
 
             number = 1 + random.nextInt(upperNumberBound);
             questionsAndAnswers[i][0] = Integer.toString(number);
-            questionsAndAnswers[i][1] = isPrime(number);
+            questionsAndAnswers[i][1] = isPrime(number) ? "yes" : "no";
         }
 
         Engine.runGame(questionsAndAnswers, getRules());
     }
 
-    private static String isPrime(int number) {
+    private static boolean isPrime(int number) {
         // not an optimal but quick solution
-        final int three = 3; // checkstyle doesn't like magic numbers
-        if (number == 1) {
-            return "no";
-        } else if (number == 2 || number == three) {
-            return "yes";
+        if (number < 2) {
+            return false;
         }
         for (int divisor = 2; divisor <= Math.ceil(Math.sqrt(number)); divisor++) {
-            if (number % divisor == 0) {
-                return "no";
+            if (number % divisor == 0 && divisor < number) {
+                return false;
             }
         }
 
-        return "yes";
+        return true;
     }
+
     public static String getRules() {
         return RULES;
     }
