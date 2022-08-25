@@ -22,12 +22,17 @@ public class GCD {
             numberRight = 1 + random.nextInt(upperNumberBound);
 
             questionsAndAnswers[i][0] = Integer.toString(numberLeft) + " " + Integer.toString(numberRight);
-            questionsAndAnswers[i][1] = getGCD(Math.max(numberLeft, numberRight), Math.min(numberLeft, numberRight));
+            questionsAndAnswers[i][1] = Integer.toString(
+                    getGCD(
+                            Math.max(numberLeft, numberRight),
+                            Math.min(numberLeft, numberRight)
+                    )
+            );
         }
 
         Engine.runGame(questionsAndAnswers, getRules());
     }
-    public static String getGCD(int a, int b) {
+    public static int getGCD(int a, int b) {
         //Euclidean algorithm
         int remainder = 1;
         // "a" is always greater then "b"
@@ -38,7 +43,7 @@ public class GCD {
             b = remainder;
         }
         // remainder is 0 when a % b == 0 and since "a" was rewritten as "b", the gcd is "a"
-        return Integer.toString(a);
+        return a;
     }
     public static String getRules() {
         return RULES;
