@@ -23,27 +23,47 @@ public class Calc {
 
             int operatorIndex = random.nextInt(upperOperatorBound);
 
-            switch (operatorIndex) {
-                case 0 -> {
-                    questionsAndAnswers[i][0] = Integer.toString(numberLeft) + " + " + Integer.toString(numberRight);
-                    questionsAndAnswers[i][1] = Integer.toString(numberLeft + numberRight);
-                }
-                case 1 -> {
-                    questionsAndAnswers[i][0] = Integer.toString(numberLeft) + " - " + Integer.toString(numberRight);
-                    questionsAndAnswers[i][1] = Integer.toString(numberLeft - numberRight);
-                }
-                case 2 -> {
-                    questionsAndAnswers[i][0] = Integer.toString(numberLeft) + " * " + Integer.toString(numberRight);
-                    questionsAndAnswers[i][1] = Integer.toString(numberLeft * numberRight);
-                }
-                default -> {
-                    throw new RuntimeException("Result for operation with index "
-                            + operatorIndex + " is not defined.");
-                }
-            }
+            questionsAndAnswers[i][0] = getExpression(operatorIndex, numberLeft, numberRight);
+            questionsAndAnswers[i][1] = Integer.toString(calculateResult(operatorIndex, numberLeft, numberRight));
         }
 
         Engine.runGame(questionsAndAnswers, getRules());
+    }
+
+    private static int calculateResult(int operatorIndex, int numberLeft, int numberRight) {
+        switch (operatorIndex) {
+            case 0 -> {
+                return numberLeft + numberRight;
+            }
+            case 1 -> {
+                return numberLeft - numberRight;
+            }
+            case 2 -> {
+                return numberLeft * numberRight;
+            }
+            default -> {
+                throw new RuntimeException("Result for operation with index "
+                        + operatorIndex + " is not defined.");
+            }
+        }
+    }
+
+    private static String getExpression(int operatorIndex, int numberLeft, int numberRight) {
+        switch (operatorIndex) {
+            case 0 -> {
+                return Integer.toString(numberLeft) + " + " + Integer.toString(numberRight);
+            }
+            case 1 -> {
+                return Integer.toString(numberLeft) + " - " + Integer.toString(numberRight);
+            }
+            case 2 -> {
+                return Integer.toString(numberLeft) + " * " + Integer.toString(numberRight);
+            }
+            default -> {
+                throw new RuntimeException("Result for operation with index "
+                        + operatorIndex + " is not defined.");
+            }
+        }
     }
 
     public static String getRules() {
