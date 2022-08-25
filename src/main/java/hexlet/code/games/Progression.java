@@ -22,7 +22,9 @@ public class Progression {
             int numberDiff = 1 + random.nextInt(upperBoundDiff);
             int skipIndex = random.nextInt(seriesLength);
 
-            questionsAndAnswers[i][0] = buildSeries(numberStart, numberDiff, skipIndex, seriesLength);
+            int[] series = buildSeries(numberStart, numberDiff, seriesLength);
+
+            questionsAndAnswers[i][0] = seriesToString(series, skipIndex);
 
             questionsAndAnswers[i][1] = Integer.toString(numberStart + numberDiff * skipIndex);
         }
@@ -30,20 +32,31 @@ public class Progression {
         Engine.runGame(questionsAndAnswers, getRules());
     }
 
-    public static String buildSeries(int numberStart, int numberDiff, int skipIndex, int seriesLength) {
+    private static int[] buildSeries(int numberStart, int numberDiff, int seriesLength) {
+        int[] series = new int[seriesLength];
+
+        for (int i = 0; i < seriesLength; i++) {
+            series[i] = numberStart + numberDiff * i;
+        }
+
+        return series;
+    }
+
+    private static String seriesToString(int[] series, int skipIndex) {
         StringBuilder builder = new StringBuilder();
 
-        for (int j = 0; j < seriesLength; j++) {
+        for (int j = 0; j < series.length; j++) {
             if (j == skipIndex) {
                 builder.append(".. ");
             } else {
-                builder.append(numberStart + numberDiff * j);
+                builder.append(series[j]);
                 builder.append(" ");
             }
         }
 
         return builder.toString();
     }
+
     public static String getRules() {
         return RULES;
     }
