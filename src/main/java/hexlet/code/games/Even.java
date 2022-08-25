@@ -18,10 +18,14 @@ public class Even {
             int number = random.nextInt(upperRandomBound);
 
             questionsAndAnswers[i][0] = Integer.toString(number);
-            questionsAndAnswers[i][1] = number % 2 == 0 ? "yes" : "no";
+            questionsAndAnswers[i][1] = isEven(number) ? "yes" : "no";
         }
 
         Engine.runGame(questionsAndAnswers, getRules());
+    }
+
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 
     public static String getRules() {
