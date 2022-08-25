@@ -37,6 +37,8 @@ public class Calc {
                     questionsAndAnswers[i][1] = Integer.toString(numberLeft * numberRight);
                 }
                 default -> {
+                    throw new RuntimeException("Result for operation with index "
+                            + operatorIndex + " is not defined.");
                 }
             }
         }
