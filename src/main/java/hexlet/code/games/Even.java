@@ -3,6 +3,8 @@ package hexlet.code.games;
 import java.util.Random;
 import hexlet.code.Engine;
 public class Even {
+    private static final String RULES = "Answer 'yes' if number even otherwise answer 'no'.";
+
     public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
@@ -23,6 +25,6 @@ public class Even {
     }
 
     public static String getRules() {
-        return "Answer 'yes' if number even otherwise answer 'no'.";
+        return RULES;
     }
 }

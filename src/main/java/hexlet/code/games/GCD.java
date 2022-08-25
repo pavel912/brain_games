@@ -3,6 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import hexlet.code.Engine;
 public class GCD {
+    private static final String RULES = "Find the greatest common divisor of given numbers.";
     public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
@@ -40,6 +41,6 @@ public class GCD {
         return Integer.toString(a);
     }
     public static String getRules() {
-        return "Find the greatest common divisor of given numbers.";
+        return RULES;
     }
 }

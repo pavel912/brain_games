@@ -3,6 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import hexlet.code.Engine;
 public class Prime {
+    private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
@@ -41,6 +42,6 @@ public class Prime {
         return "yes";
     }
     public static String getRules() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        return RULES;
     }
 }

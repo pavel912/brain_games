@@ -3,6 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import hexlet.code.Engine;
 public class Progression {
+    private static final String RULES = "What number is missing in the progression?";
     public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
@@ -44,6 +45,6 @@ public class Progression {
         return builder.toString();
     }
     public static String getRules() {
-        return "What number is missing in the progression?";
+        return RULES;
     }
 }

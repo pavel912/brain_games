@@ -3,6 +3,8 @@ package hexlet.code.games;
 import java.util.Random;
 import hexlet.code.Engine;
 public class Calc {
+    private static final String RULES = "What is the result of the expression?";
+
     public static String[][] getQuestionsAndAnswers() {
         Random random = new Random();
 
@@ -43,6 +45,6 @@ public class Calc {
     }
 
     public static String getRules() {
-        return "What is the result of the expression?";
+        return RULES;
     }
 }
