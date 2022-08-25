@@ -20,26 +20,11 @@ public class App {
 
         switch (command) {
             case "1" -> Cli.greetUser();
-            case "2" -> Engine.runGame(
-                    Even.getQuestionsAndAnswers(),
-                    Even.getRules()
-            );
-            case "3" -> Engine.runGame(
-                    Calc.getQuestionsAndAnswers(),
-                    Calc.getRules()
-            );
-            case "4" -> Engine.runGame(
-                    GCD.getQuestionsAndAnswers(),
-                    GCD.getRules()
-            );
-            case "5" -> Engine.runGame(
-                    Progression.getQuestionsAndAnswers(),
-                    Progression.getRules()
-            );
-            case "6" -> Engine.runGame(
-                    Prime.getQuestionsAndAnswers(),
-                    Prime.getRules()
-            );
+            case "2" -> Even.startGame();
+            case "3" -> Calc.startGame();
+            case "4" -> GCD.startGame();
+            case "5" -> Progression.startGame();
+            case "6" -> Prime.startGame();
             case "0" -> System.exit(0);
             default -> System.out.println("Command was not understood");
         }

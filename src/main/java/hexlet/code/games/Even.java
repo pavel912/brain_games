@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class Even {
     private static final String RULES = "Answer 'yes' if number even otherwise answer 'no'.";
 
-    public static String[][] getQuestionsAndAnswers() {
+    public static void startGame() {
         Random random = new Random();
 
         final int upperRandomBound = 100;
@@ -21,7 +21,7 @@ public class Even {
             questionsAndAnswers[i][1] = number % 2 == 0 ? "yes" : "no";
         }
 
-        return questionsAndAnswers;
+        Engine.runGame(questionsAndAnswers, getRules());
     }
 
     public static String getRules() {

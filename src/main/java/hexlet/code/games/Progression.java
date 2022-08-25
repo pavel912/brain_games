@@ -4,7 +4,7 @@ import java.util.Random;
 import hexlet.code.Engine;
 public class Progression {
     private static final String RULES = "What number is missing in the progression?";
-    public static String[][] getQuestionsAndAnswers() {
+    public static void startGame() {
         Random random = new Random();
 
         final int seriesLength = 10;
@@ -27,7 +27,7 @@ public class Progression {
             questionsAndAnswers[i][1] = Integer.toString(numberStart + numberDiff * skipIndex);
         }
 
-        return questionsAndAnswers;
+        Engine.runGame(questionsAndAnswers, getRules());
     }
 
     public static String buildSeries(int numberStart, int numberDiff, int skipIndex, int seriesLength) {

@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class Calc {
     private static final String RULES = "What is the result of the expression?";
 
-    public static String[][] getQuestionsAndAnswers() {
+    public static void startGame() {
         Random random = new Random();
 
         final int upperNumberBound = 20;
@@ -41,7 +41,7 @@ public class Calc {
             }
         }
 
-        return questionsAndAnswers;
+        Engine.runGame(questionsAndAnswers, getRules());
     }
 
     public static String getRules() {

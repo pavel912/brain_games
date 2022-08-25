@@ -4,7 +4,7 @@ import java.util.Random;
 import hexlet.code.Engine;
 public class GCD {
     private static final String RULES = "Find the greatest common divisor of given numbers.";
-    public static String[][] getQuestionsAndAnswers() {
+    public static void startGame() {
         Random random = new Random();
 
         final int upperNumberBound = 99;
@@ -25,7 +25,7 @@ public class GCD {
             questionsAndAnswers[i][1] = getGCD(Math.max(numberLeft, numberRight), Math.min(numberLeft, numberRight));
         }
 
-        return questionsAndAnswers;
+        Engine.runGame(questionsAndAnswers, getRules());
     }
     public static String getGCD(int a, int b) {
         //Euclidean algorithm
