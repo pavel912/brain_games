@@ -22,7 +22,7 @@ public class Prime {
             questionsAndAnswers[i][1] = isPrime(number) ? "yes" : "no";
         }
 
-        Engine.runGame(questionsAndAnswers, getRules());
+        Engine.runGame(questionsAndAnswers, RULES);
     }
 
     private static boolean isPrime(int number) {
@@ -37,9 +37,5 @@ public class Prime {
         }
 
         return true;
-    }
-
-    public static String getRules() {
-        return RULES;
     }
 }

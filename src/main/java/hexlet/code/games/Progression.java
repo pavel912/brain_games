@@ -29,7 +29,7 @@ public class Progression {
             questionsAndAnswers[i][1] = Integer.toString(numberStart + numberDiff * skipIndex);
         }
 
-        Engine.runGame(questionsAndAnswers, getRules());
+        Engine.runGame(questionsAndAnswers, RULES);
     }
 
     private static int[] buildSeries(int numberStart, int numberDiff, int seriesLength) {
@@ -55,9 +55,5 @@ public class Progression {
         }
 
         return builder.toString();
-    }
-
-    public static String getRules() {
-        return RULES;
     }
 }

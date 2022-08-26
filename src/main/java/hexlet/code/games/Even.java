@@ -21,14 +21,10 @@ public class Even {
             questionsAndAnswers[i][1] = isEven(number) ? "yes" : "no";
         }
 
-        Engine.runGame(questionsAndAnswers, getRules());
+        Engine.runGame(questionsAndAnswers, RULES);
     }
 
     private static boolean isEven(int number) {
         return number % 2 == 0;
-    }
-
-    public static String getRules() {
-        return RULES;
     }
 }

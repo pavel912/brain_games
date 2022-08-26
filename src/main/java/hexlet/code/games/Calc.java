@@ -27,7 +27,7 @@ public class Calc {
             questionsAndAnswers[i][1] = Integer.toString(calculateResult(operatorIndex, numberLeft, numberRight));
         }
 
-        Engine.runGame(questionsAndAnswers, getRules());
+        Engine.runGame(questionsAndAnswers, RULES);
     }
 
     private static int calculateResult(int operatorIndex, int numberLeft, int numberRight) {
@@ -64,9 +64,5 @@ public class Calc {
                         + operatorIndex + " is not defined.");
             }
         }
-    }
-
-    public static String getRules() {
-        return RULES;
     }
 }

@@ -30,7 +30,7 @@ public class GCD {
             );
         }
 
-        Engine.runGame(questionsAndAnswers, getRules());
+        Engine.runGame(questionsAndAnswers, RULES);
     }
     public static int getGCD(int a, int b) {
         //Euclidean algorithm
@@ -44,8 +44,5 @@ public class GCD {
         }
         // remainder is 0 when a % b == 0 and since "a" was rewritten as "b", the gcd is "a"
         return a;
-    }
-    public static String getRules() {
-        return RULES;
     }
 }
