@@ -15,14 +15,17 @@
 
 Далее представлены примеры работы игр в приложении
 
+Even:
+[![asciicast](https://asciinema.org/a/HIV6h16L8X8ZZOVpNBPrLd95O.svg)](https://asciinema.org/a/HIV6h16L8X8ZZOVpNBPrLd95O)
+
 Calculator:
-[![asciicast](https://asciinema.org/a/kr8oedTGoEyimaae76CzSKT9w.svg)](https://asciinema.org/a/kr8oedTGoEyimaae76CzSKT9w)
+[![asciicast](https://asciinema.org/a/iQSMSE4qqH8DZOuQM6XgmLbcR.svg)](https://asciinema.org/a/iQSMSE4qqH8DZOuQM6XgmLbcR)
 
 GCD:
-[![asciicast](https://asciinema.org/a/5iKtbVXCRwGCsROVR8GT48Yw7.svg)](https://asciinema.org/a/5iKtbVXCRwGCsROVR8GT48Yw7)
+[![asciicast](https://asciinema.org/a/uuHiWV6w9K5tVHhkeUZB6I8aJ.svg)](https://asciinema.org/a/uuHiWV6w9K5tVHhkeUZB6I8aJ)
 
 Progression:
-[![asciicast](https://asciinema.org/a/KDNgmD5C1jSGSynQ4oaTHNu3E.svg)](https://asciinema.org/a/KDNgmD5C1jSGSynQ4oaTHNu3E)
+[![asciicast](https://asciinema.org/a/2SLU8ywpHogzydX8FP4mvslj0.svg)](https://asciinema.org/a/2SLU8ywpHogzydX8FP4mvslj0)
 
 Prime:
-[![asciicast](https://asciinema.org/a/c5JlfmmjWc1ykLyFJAVuP2v8m.svg)](https://asciinema.org/a/c5JlfmmjWc1ykLyFJAVuP2v8m)
+[![asciicast](https://asciinema.org/a/GKRkuHSbVcdskGA2nSFI7wJKz.svg)](https://asciinema.org/a/GKRkuHSbVcdskGA2nSFI7wJKz)
